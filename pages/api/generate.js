@@ -11,16 +11,21 @@ const generateAction = async (req, res) => {
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.formattedPrompt}`)
 
-  const baseCompletion = await openai.createCompletion({
-    model: 'text-davinci-003',
-    prompt: `${basePromptPrefix}${req.body.formattedPrompt}`,
-    temperature: 0.7,
-    max_tokens: 250,
-  });
+  try{
+    const baseCompletion = await openai.createCompletion({
+      model: 'text-davinci-003',
+      prompt: `${basePromptPrefix}${req.body.formattedPrompt}`,
+      temperature: 0.7,
+      max_tokens: 250,
+    });
+    
+    const basePromptOutput = baseCompletion.data.choices.pop();
   
-  const basePromptOutput = baseCompletion.data.choices.pop();
-
-  res.status(200).json({ output: basePromptOutput });
+    res.status(200).json({ output: basePromptOutput });
+  }catch (error) {
+    res.status(400).json({error});
+  }
+  
 };
 
 export default generateAction;
