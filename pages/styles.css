@@ -122,6 +122,40 @@ textarea {
     border-color:rgba(255, 255, 255, 0.75)
 }
 
+.prompt-name-box {
+    border-bottom-width: 1px;
+    border-color: rgba(255, 255, 255, 0.1);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-style: solid;
+    border-top-width: 1px;
+    place-content: flex-start;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column nowrap;
+    gap: 10px;
+    height: 40px;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+    width: 610px;
+    max-width: 1200px;
+    will-change: transform;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    font-style: normal;
+    letter-spacing: 0px;
+    line-height: 1.6em;
+    text-align: start;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    text-transform: none;
+}
 
 .prompt-buttons {
     display: flex;
@@ -172,7 +206,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgb(255, 79, 18);
+    background-color: rgb(58, 18, 255);
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -200,6 +234,11 @@ textarea {
 .generate p {
     color: rgb(255, 255, 255);
     margin: 0;
+}
+
+.generated-response {
+    color: rgb(255,255,255);
+    margin:0;
 }
 
 .loading {
@@ -338,7 +377,19 @@ textarea {
     }
 
     .prompt-box {
-        width: 100%;
+        width: 75%;
+    }
+
+    .prompt-name-box {
+        width: 75%;
+    }
+
+    .generated-response {
+        width: 75%;
+    }
+
+    .header-subtitle {
+        width: 75%;
     }
 }
 
@@ -354,7 +405,19 @@ textarea {
     }
 
     .prompt-box {
-        width: 100%;
+        width: 75%;
+    }
+
+    .prompt-name-box {
+        width: 75%;
+    }
+
+    .generated-response {
+        width: 75%;
+    }
+
+    .header-subtitle {
+        width: 75%;
     }
 }
 
@@ -386,7 +449,19 @@ textarea {
     }
 
     .prompt-box {
-        width: 100%;
+        width: 75%;
+    }
+
+    .prompt-name-box {
+        width: 75%;
+    }
+
+    .generated-response {
+        width: 75%;
+    }
+
+    .header-subtitle {
+        width: 75%;
     }
 }
 
