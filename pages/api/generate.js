@@ -7,7 +7,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 const basePromptPrefix = "";
 
-export default handler = async (req, res) => {
+const generateAction = async (req, res) => {
   console.log(`API: ${basePromptPrefix}${req.body.formattedPrompt}`)
   const baseCompletion = await openai.createCompletion({
     model: 'text-davinci-003',
@@ -19,3 +19,5 @@ export default handler = async (req, res) => {
   const basePromptOutput = baseCompletion.data.choices.pop();
   res.status(200).json({ output: basePromptOutput });
 };
+
+export default generateAction;
